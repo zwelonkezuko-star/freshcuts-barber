@@ -1,0 +1,189 @@
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #111, #333);
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e63946;
+}
+
+.btn {
+  background-color: #e63946;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-outline {
+  border: 2px solid #e63946;
+  color: #e63946;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: url("images/barber-bg.jpg") no-repeat center/cover;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+
+#services {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+
+#services h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e63946;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #ffe5e5;
+}
+
+
+#gallery {
+  background-color: #fafafa;
+  padding: 50px 20px;
+}
+
+#gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e63946;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+
+#booking {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+
+#booking h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #c72c3b;
+}
+
+
+#contact {
+  background-color: #fafafa;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+}
