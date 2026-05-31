@@ -10,38 +10,60 @@
 
 <body>
 
-<!-- HEADER -->
+
 <header>
   <nav class="navbar">
     <img src="logo.png" alt="Barber Logo" class="logo">
 
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#booking">Book</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About Us</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><a href="#booking">Book</a></li>
+  <li><a href="#contact">Contact</a></li>
+  </ul>
 
-    <!-- 🔥 WhatsApp Button -->
+    
     <a class="btn" href="https://wa.me/27710127383?text=Hi%20I%20want%20to%20book%20a%20haircut">
       Book Now
     </a>
   </nav>
 </header>
 
-<!-- HERO -->
+
 <section class="hero" id="home">
   <h1>Sharp Cuts. Clean Fades. Real Style.</h1>
   <p>Book your haircut in seconds and walk out fresh.</p>
 
-  <!-- WhatsApp CTA -->
+  
   <a href="https://wa.me/27710127383?text=Hi%20I%20want%20to%20book%20a%20haircut" class="btn">
     Book on WhatsApp
   </a>
+  
+</section>
+<section id="about" class="about">
+  <h2>About Us</h2>
+
+  <p>
+    Welcome to FreshCuts Barber Shop, where style meets precision.
+    We are dedicated to providing clean fades, sharp cuts, beard grooming,
+    and professional barbering services for men and children.
+  </p>
+
+  <p>
+    Our goal is to ensure every client leaves looking fresh and feeling
+    confident. Whether you're preparing for work, a special occasion,
+    or simply maintaining your look, our skilled barbers are here to help.
+  </p>
+
+  <p>
+    Visit us in Pretoria and experience quality service in a friendly,
+    professional environment.
+  </p>
 </section>
 
-<!-- SERVICES -->
+
 <section id="services">
   <h2>Our Services</h2>
   <div class="service-grid">
@@ -52,7 +74,7 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+
 <section id="gallery">
   <h2>Our Work</h2>
   <div class="gallery-container">
@@ -63,11 +85,11 @@
   </div>
 </section>
 
-<!-- BOOKING -->
+
 <section id="booking">
   <h2>Book an Appointment</h2>
 
-  <!-- Form sends user to WhatsApp -->
+  
   <form onsubmit="sendToWhatsApp(); return false;">
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="tel" id="phone" placeholder="Phone Number" required>
@@ -84,7 +106,7 @@
   </form>
 </section>
 
-<!-- CONTACT -->
+
 <section id="contact" class="contact">
   <h2>Find Us</h2>
   <p>Pretoria, South Africa</p>
@@ -93,12 +115,12 @@
   <iframe src="https://www.google.com/maps?q=Pretoria&output=embed"></iframe>
 </section>
 
-<!-- FOOTER -->
+
 <footer>
   <p>© 2026 FreshCuts Barber Shop. All rights reserved.</p>
 </footer>
 
-<!-- 🔥 SCRIPT -->
+
 <script>
 function sendToWhatsApp() {
   let name = document.getElementById("name").value;
