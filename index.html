@@ -90,20 +90,24 @@
   <h2>Book an Appointment</h2>
 
   
-  <form onsubmit="sendToWhatsApp(); return false;">
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <input type="date" id="date" required>
-    <input type="time" id="time" required>
+ <form onsubmit="return validateAndSend()">
+  <input type="text" id="name" placeholder="Full Name" required>
+  <div id="nameError" class="error"></div>
 
-    <select id="service">
-      <option>Fade Cut</option>
-      <option>Beard Trim</option>
-      <option>Kids Cut</option>
-    </select>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+  <div id="phoneError" class="error"></div>
 
-    <button type="submit">Submit Booking</button>
-  </form>
+  <input type="date" id="date" required>
+  <input type="time" id="time" required>
+
+  <select id="service">
+    <option>Fade Cut</option>
+    <option>Beard Trim</option>
+    <option>Kids Cut</option>
+  </select>
+
+  <button type="submit">Submit Booking</button>
+</form>
 </section>
 
 
@@ -122,23 +126,49 @@
 
 
 <script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
+function validateAndSend() {
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
   let date = document.getElementById("date").value;
   let time = document.getElementById("time").value;
   let service = document.getElementById("service").value;
 
-  let message = `Booking Request:%0A
-  Name: ${name}%0A
-  Phone: ${phone}%0A
-  Service: ${service}%0A
-  Date: ${date}%0A
-  Time: ${time}`;
+  let nameError = document.getElementById("nameError");
+  let phoneError = document.getElementById("phoneError");
 
-  let url = "https://wa.me/27710127383?text=" + message;
+  nameError.innerHTML = "";
+  phoneError.innerHTML = "";
+
+  let valid = true;
+
+  // NAME validation
+  if (!/^[A-Za-z\s]+$/.test(name)) {
+    nameError.innerHTML = "Name must contain letters only";
+    valid = false;
+  }
+
+  // PHONE validation
+  if (!/^[0-9]{10,}$/.test(phone)) {
+    phoneError.innerHTML = "Phone must be at least 10 digits";
+    valid = false;
+  }
+
+  if (!valid) return false;
+
+  // CLEAN WhatsApp message
+  let message =
+    "Booking Request:%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Service: " + service + "%0A" +
+    "Date: " + date + "%0A" +
+    "Time: " + time;
+
+  let url = "https://wa.me/27710127383?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
+
+  return false;
 }
 </script>
 
