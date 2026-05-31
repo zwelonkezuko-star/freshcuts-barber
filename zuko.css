@@ -172,6 +172,11 @@ body {
   margin-bottom: 20px;
   color: #e63946;
 }
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
 
 form {
   display: flex;
@@ -217,3 +222,4 @@ footer {
   background: #111;
   color: #fff;
 }
+
